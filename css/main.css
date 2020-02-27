@@ -1,0 +1,21 @@
+/* Reset Rule */
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+header {
+  background-color: #96cfd8;
+  height: 100vh;
+  background-image: url("../images/lines-lgt.svg");
+  background-position: bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+main {
+  background-color: #ffffff;
+  -webkit-clip-path: polygon(0 10vw, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 10vw, 100% 0, 100% 100%, 0 100%);
+  margin-top: -10vw;
+  padding: 10vw;
+}
