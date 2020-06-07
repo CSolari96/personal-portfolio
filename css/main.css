@@ -19,3 +19,10 @@ main {
   margin-top: -10vw;
   padding: 10vw;
 }
+nav {
+  display: column;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+img {
+  max-width: 100%;
+}
