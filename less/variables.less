@@ -5,3 +5,40 @@
 @teal: #96cfd8;
 @blue: #286fb4;
 @pink: #df4c73;
+
+// Fonts
+.unica {
+	font-family: 'Unica One', sans-serif;
+	color: @pink;
+	text-align: center;
+	font-size: 3.375rem;
+	font-weight: normal;
+} // End .unica
+
+.body-copy {
+	font-family: Raleway, sans-serif;
+	font-weight: 400;
+} // End .body-copy
+
+// Additional Styling
+.background {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.gray {
+	color: @gray;
+} // End .gray
+
+.triangle-bottom {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 0;
+	z-index: 1;
+	height: 0;
+	border-top: solid 200px @white;
+	border-left: solid 50vw transparent;
+	border-right: solid 50vw transparent;
+}
