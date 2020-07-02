@@ -22,15 +22,33 @@
 
 		<header>
 
-			<nav>
-
-				<a href="index.html"><img src="images/cs-logo.svg" alt="Courtney Solari" title="Courtney Solari" id="logo"></a>
-
-				<button class="toggle-button">&#9776;</button>
+			<nav class="mobile-menu">
 
 				<ul>
 
-					<li><a href="">Home</a></li>
+					<li><a href="javascript:void(0)" id="close-menu">&times;</a></li>
+
+					<li><a href="#intro">Home</a></li>
+
+					<li><a href="#about-me">About</a></li>
+
+					<li><a href="#portfolio">Portfolio</a></li>
+
+					<li><a href="#contact">Contact</a></li>
+
+				</ul>
+
+			</nav>
+
+			<nav class="nav-bar">
+
+				<a href="index.html"><img src="images/cs-logo.svg" alt="Courtney Solari" title="Courtney Solari" id="logo"></a>
+
+				<button id="open-mobile-menu" class="toggle-button">&#9776;</button>
+
+				<ul class="desktop-menu">
+
+					<li><a href="#intro">Home</a></li>
 
 					<li><a href="#about-me">About</a></li>
 
@@ -71,6 +89,12 @@
 				</div>
 
 			</section>
+
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      
+	        	<polygon fill="white" points="0, 100 100, 0 100, 100"/>
+	        
+	      	</svg>
 
 		</header>
 
@@ -120,35 +144,39 @@
 
 			<section id="about-me">
 
-				<div>
+				
+			</section>
 
-					<h2 class="unica">Who Am I?</h2>
+			<section id="resume">
 
-					<p>I'm Courtney, a graduate student in the Pensacola, Florida area. I am currently an online student through the University of Florida, pursuing a Masters of Art in Mass Communication with a specialization in Web Design and Online Communication. I graduated from the University of West Florida with a Bachelor's degree in Information Technology with a specialization in Digital Enterprises. During my undergraduate years, I discovered my passion for all things digital - web design, graphic design, social media marketing, and more. I can get lost in the design and coding process, completely oblivious to the world around me and am endlessly intrigued by the power of digital platforms for business.</p>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      
+		        	<polygon fill="#e2f0f9" points="0, 100 100, 0 100, 100"/>
 
-				</div>
-
-				<div>
-
-					<img src="images/courtney_solari_headshot.jpg" title="Courtney Solari Headshot" alt="Courtney Solari Headshot" class="headshot" />
-
-					<a download href="#" class="unica">Download Resume</a>
-
-				</div>
-
-				<section id="resume">
-
-					<p>This is where my resume will go</p>
-
-				</section>
+		        	<polygon fill="#e2f0f9" points="0, 100 100, 0 100, 100" transform="scale (-1, 1)" transform-origin="center" />
+		        
+		      	</svg>
 
 			</section>
 
 			<section id="portfolio">
 
+				<svg class="portfolio-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  
+		        	<polygon points="0,0 100,0 50,100" fill="#e2f0f9"/>
+		        
+		      	</svg>
+
+
 			</section>
 
 			<section id="contact">
+
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      
+		        	<polygon fill="#64686E" points="0, 100 100, 0 100, 100"/>
+		        
+		      	</svg>
 
 			</section>
 
@@ -156,7 +184,11 @@
 
 		<footer>
 
+			
+
 		</footer>
+
+		<script src="lib/main.js"></script>
 
 	</body>
 

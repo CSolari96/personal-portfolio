@@ -1,77 +1,122 @@
 // Import variables.less
-@import "variables";
+@import 'variables';
 
 /* Reset Rule */
 * {
 	margin: 0;
-	border: 0;
 	padding: 0;
+	border: 0;
 } // End reset
+
+/* General Stylings */
+img {
+	max-width: 90%;
+} // End img
 
 body {
 	.body-copy();
 	color: @gray;
-} // End body
+}  // End body
 
 header {
 	background-color: @teal;
 	height: 100vh;
-	background-image: url("../images/lines-lgt.svg");
+	background-image: url('../images/lines-lgt.svg');
 	background-position: bottom;
 	.background();
+	background-size: 200%;
 	color: @white;
 
-	nav {
-		display: flex;
-		padding: 20px 5%;
+	.mobile-menu {
+		height: 0;
+		width: 100%;
 		position: fixed;
-		width: 90%;
+		z-index: 100000;
+		top: -20%;
+		right: 0;
+		overflow-y: hidden;
+		transition: 0.5s;
+		text-align: right;
+		padding-top: 20%;
+		background-color: @gray;
+
+		ul {
+			li {
+				list-style-type: none;
+				padding: 5%;
+
+				a {
+					&:link, &:visited {
+						color: @white;
+						text-decoration: none;
+						font-size: 3rem;
+						transition: all 0.5s;
+					} // End &:link, &:visited
+
+					&:hover, &:active {
+						color: @pink;
+						transition: all 0.5s;
+					} // End &:hover, &:active
+				} // End a
+			} // End li
+		} // End ul
+	} // End .mobile-menu
+
+	.nav-bar {
+		display: flex;
+		padding: 10px 5%;
+		position: fixed;
+		width: @default-width;
 		background-color: @teal;
 		z-index: 50;
 
 		#logo {
-			width: 75%;
+			width: 60%;
 
-			@media(min-width: 500px) {
+			@media (min-width: 500px) {
 				width: 100%;
 			} // End min-width 500
 		} // End #logo
 
 		.toggle-button {
-			background:none;
-			position:absolute;
-			top:0;
-			right:0;
-			line-height:45px;
-			padding: 22px 5%;
-			color:@white;
-			border:0;
-			font-size:2rem;
-			font-weight:bold;
-			cursor:pointer;
-			outline:none;
-			z-index:10000000000000;
-		}  // End .toggle-button
+			background: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			line-height: 30px;
+			padding: 12px 5%;
+			color: @white;
+			border: 0;
+			font-size: 1.75rem;
+			font-weight: bold;
+			cursor: pointer;
+			outline: none;
+			z-index: 1000000000;
 
-		ul {
+			@media (min-width: 500px) {
+				line-height: 45px;
+				font-size: @font-base__lg;
+			} // End min-width 500
+		} // End .toggle-button
+
+		.desktop-menu {
 			display: none;
-		} // End ul
-	} // End nav
+		} // End .desktop-menu
+	} // End .nav-bar
 
 	#intro {
-		flex-grow: 1;
-		padding-top: 100px;
-		font-size: 1rem;
-		//padding-top: 150px;
-		//font-size: 2.25rem;
+		padding-top: 150px;
+		font-size: @font-base;
 		line-height: 1.65;
 		text-align: center;
 		position: fixed;
-		width: 100%;
+		width: @default-width;
+		left: 0;
+		right: 0;
+		margin: auto;
 
 		.unica {
 			line-height: 1.3;
-			//font-size: 7.594rem;
 		} // End .unica
 
 		h1 {
@@ -87,89 +132,95 @@ header {
 			} // End div
 		} // End .social-icons
 	} // End #intro
+
+	svg {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 10vw;
+	} // End svg
 } // End header
 
 main {
+	min-height: 1000px;  // FOR TESTING PURPOSES ONLY
+
 	background-color: @white;
-	clip-path: polygon(0 10vw, 100% 0, 100% 100%, 0 100%);
-	margin-top: -10vw;
-	padding-top: 15vw;
+	position: relative;
 
 	#services {
-		.service-icons {
-			display: flex;
-			justify-content: space-around;
-		} // End .service-icons
-	} // End #services
+		height: 500px; // FOR TESTING PURPOSES ONLY
+	} End #services
 
 	#about-me {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-
-		div {
-			width: 50%;
-
-			.headshot {
-				max-width: 300px;
-				border-radius: 0 150px 0 150px;
-			}
-		}
-
-		#resume {
-			width: 100%;
-			background-image: url("../images/lines-md-left.svg");
-			background-position: bottom left;
-			background-repeat: no-repeat;
-			height: 1000px;
-			position: relative;
-			margin: 0 auto;
-			background-color: @white;
-
-			&:after {
-				.triangle-bottom();
-			}
-		} // End #resume
-		
+		height: 500px; // FOR TESTING PURPOSES ONLY
 	} // End #about-me
 
-	
+	#resume {
+		height: 1000px; // FOR TESTING PURPOSES ONLY
+
+		background-image: url('../images/lines-md-left.svg');
+		background-position: bottom left;
+		background-repeat: no-repeat;
+		margin: 0 auto;	
+		position: relative;
+
+		svg {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 20vw;
+		}
+	} // End #resume
 
 	#portfolio {
-		background-color: @light-blue;
-		height: 1000px;
-		position: relative;
-		margin: 0 auto;
+		min-height: 1000px; // FOR TESTING PURPOSE ONLY
 
-		&:after {
-			.triangle-bottom();
-			border-top-color: @light-blue;
-		}
-	} // End portfolio
+		margin: 0 auto;
+		position: relative;
+		background-color: @light-blue;
+
+		svg {
+			position: absolute;
+			bottom: -10vw;
+			width: 100%;
+			height: 10vw;
+		} // End svg
+	} // End #portfolio
 
 	#contact {
+		height: 500px;  // FOR TESTING PURPOSES ONLY
+
 		background-color: @white;
-		height: 500px;
-	}  // End #contact
+		background-image: url('../images/lines-md-left.svg'), url('../images/lines-md-right.svg');
+		background-position: bottom left, bottom right;
+		background-repeat: no-repeat;
+		background-size: 20%;
+
+		svg {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 10vw;
+		} // End svg
+	} // End #contact
 } // End main
 
 footer {
-	clip-path: polygon(0 10vw, 100% 0, 100% 100%, 0 100%);
-	margin-top: -10vw;
-	padding-top: 15vw;
-	background-color: @gray;
+	height: 200px; // FOR TESTING PURPOSES ONLY
 
+	background-color: @gray;
+	position: relative;
 } // End footer
 
 /***** MEDIA QUERIES *****/
 @media(min-width: 900px) {
 	header {
-		nav {
+		.nav-bar {
 			.toggle-button {
 				display: none;
 			} // End .toggle-button
 
-			ul {
+			.desktop-menu {
 				text-align: right;
 				flex-grow: 1;
 				display: flex;
@@ -177,7 +228,6 @@ footer {
 				align-items: center;
 				max-width: 600px;
 				margin-left: auto;
-				
 
 				li {
 					display: inline;
@@ -197,16 +247,7 @@ footer {
 						} // End &:hover, &:active;
 					} // End a
 				} // End li
-			} // End ul
-		} // End nav
-
-		#intro {
-			padding-top: 150px;
-			font-size: 2.25rem;
-
-			.unica {
-				font-size: 7.594rem;
-			} // End .unica
-		} // End #intro
+			} // End .desktop-menu
+		} // End .nav-bar
 	} // End header
-} // End min-width: 900
+} // End min-width 900

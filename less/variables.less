@@ -1,17 +1,29 @@
 // Colors
-@white: #ffffff;
-@gray: #64686E;
+@white: 	 #ffffff;
+@gray: 		 #64686E;
 @light-blue: #e2f0f9;
-@teal: #96cfd8;
-@blue: #286fb4;
-@pink: #df4c73;
+@teal: 		 #96cfd8;
+@blue: 		 #286fb4;
+@pink: 		 #df4c73;
+
+// Font Sizes
+@font-base__sm: 0.667rem;
+@font-base: 	1em;
+@font-base__md: 1.5rem;
+@font-base__lg: 2.25rem;
+@font-head: 	3.375rem;
+@font-head__md: 5.063rem;
+@font-head__lg: 7.594rem;
+
+// Additional Variables
+@default-width: 90%;
 
 // Fonts
 .unica {
 	font-family: 'Unica One', sans-serif;
 	color: @pink;
 	text-align: center;
-	font-size: 3.375rem;
+	font-size: @font-head;
 	font-weight: normal;
 } // End .unica
 
@@ -24,21 +36,27 @@
 .background {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-}
+} // End .background
 
 .gray {
 	color: @gray;
 } // End .gray
 
-.triangle-bottom {
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 0;
-	z-index: 1;
-	height: 0;
-	border-top: solid 200px @white;
-	border-left: solid 50vw transparent;
-	border-right: solid 50vw transparent;
-}
+.button {
+	display: block;
+	width: 150px;
+	padding: 10px;
+	margin: 20px auto;
+	border-radius: 30px;
+	font-size: @font-base;
+	background-color: @pink;
+	color: @white;
+
+	&:link {
+		text-decoration: none;
+	} // End &:link
+} // End .button
+
+.hide {
+	display: none;
+} // End .hide
