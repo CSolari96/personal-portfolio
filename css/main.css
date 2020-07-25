@@ -345,12 +345,43 @@ main #portfolio svg {
   height: 10vw;
 }
 main #contact {
-  height: 500px;
   background-color: #ffffff;
   background-image: url('../images/lines-md-left.svg'), url('../images/lines-md-right.svg');
   background-position: bottom left, bottom right;
   background-repeat: no-repeat;
-  background-size: 20%;
+  background-size: 40%;
+  margin-top: 75px;
+}
+main #contact .contact-form {
+  width: 85%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+main #contact .contact-form p {
+  padding: 20px 0;
+}
+main #contact .contact-form .email-link img {
+  width: 30px;
+  padding-right: 10px;
+}
+main #contact .contact-form .email-link a {
+  color: #286fb4;
+  text-decoration: none;
+}
+main #contact .contact-form form label {
+  display: none;
+}
+main #contact .contact-form form input,
+main #contact .contact-form form textarea {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  color: #64686e;
+  display: block;
+  border: 2px #e2f0f9 solid;
+  border-radius: 20px;
+  width: 90%;
+  padding: 5px 5%;
+  margin: 20px 0;
 }
 main #contact svg {
   position: absolute;

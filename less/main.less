@@ -335,13 +335,51 @@ main {
 	} // End #portfolio
 
 	#contact {
-		height: 500px;  // FOR TESTING PURPOSES ONLY
-
 		background-color: @white;
 		background-image: url('../images/lines-md-left.svg'), url('../images/lines-md-right.svg');
 		background-position: bottom left, bottom right;
 		background-repeat: no-repeat;
-		background-size: 20%;
+		background-size: 40%;
+		margin-top: 75px;
+
+		.contact-form {
+			width: @default-width;
+			margin: auto;
+			padding-bottom: 50px;
+
+			p {
+				padding: 20px 0;
+			} // End p
+
+			.email-link {				
+				img {
+					width: 30px;
+					padding-right: 10px;
+				} // End img
+
+				a {
+					color: @blue;
+					text-decoration: none;
+				} // End a
+			} // End .email-link
+
+			form {
+				label {
+					display: none;
+				} // End label
+
+				input, textarea {
+					.body-copy();
+					color: @gray;
+					display: block;
+					border: 2px @light-blue solid;
+					border-radius: 20px;
+					width: 90%;
+					padding: 5px 5%;
+					margin: 20px 0;
+				} // End input, textarea
+			} // End form
+		} // End .contact-form
 
 		svg {
 			position: absolute;
