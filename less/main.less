@@ -18,6 +18,10 @@ body {
 	color: @gray;
 }  // End body
 
+h2.unica {
+	font-size: @font-base__lg;
+}
+
 header {
 	background-color: @teal;
 	height: 100vh;
@@ -37,7 +41,6 @@ header {
 		overflow-y: hidden;
 		transition: 0.5s;
 		text-align: right;
-		padding-top: 20%;
 		background-color: @gray;
 
 		ul {
@@ -66,8 +69,8 @@ header {
 		display: flex;
 		padding: 10px 5%;
 		position: fixed;
-		width: @default-width;
 		background-color: @teal;
+		width: 90%;
 		z-index: 50;
 
 		#logo {
@@ -84,7 +87,7 @@ header {
 			top: 0;
 			right: 0;
 			line-height: 30px;
-			padding: 12px 5%;
+			padding: 12px;
 			color: @white;
 			border: 0;
 			font-size: 1.75rem;
@@ -142,25 +145,42 @@ header {
 } // End header
 
 main {
-	min-height: 1000px;  // FOR TESTING PURPOSES ONLY
-
 	background-color: @white;
 	position: relative;
 
 	#services {
-		height: 500px; // FOR TESTING PURPOSES ONLY
-	} End #services
+		width: @default-width;
+		margin: auto;
+
+		.unica {
+			padding: 50px 0 20px 0;
+		} // End .unica
+
+		.service-icons {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+
+			figure {
+				margin: 20px 0;
+
+				img {
+					display: block;
+					margin: 20px auto;
+				} // End img
+
+				figcaption {
+					text-align: center;
+				} // End figcaption
+			} // End figure
+		} // End .service-icons
+	} // End #services
 
 	#about-me {
-		height: 500px; // FOR TESTING PURPOSES ONLY
-	} // End #about-me
-
-	#resume {
-		height: 1000px; // FOR TESTING PURPOSES ONLY
-
 		background-image: url('../images/lines-md-left.svg');
 		background-position: bottom left;
 		background-repeat: no-repeat;
+		background-size: 50%;
 		margin: 0 auto;	
 		position: relative;
 
@@ -169,8 +189,50 @@ main {
 			bottom: 0;
 			width: 100%;
 			height: 20vw;
-		}
-	} // End #resume
+		} // End svg
+
+		.about-grid {
+			width: @default-width;
+			margin: 50px auto 0 auto;
+			padding-bottom: 100px;
+
+			img {
+				max-width: 250px;
+				display: block;
+				margin: 20px auto;
+				border-radius: 0 100px;
+			} // End img
+
+			@media(min-width: 700px) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto auto auto;
+
+				h2.unica {
+					padding-top: 100px;
+					text-align: left;
+				}  // End h2.unica
+
+				img {
+					max-width: 300px;
+					margin: auto;
+					grid-column-start: 2;
+					grid-column-end: 3;
+					grid-row-start: 1;
+					grid-row-end: 3;
+				} // End img
+
+				p {
+					padding: 20px 0;
+				} // End p
+
+				a {
+					grid-column-start: 2;
+					grid-column-end: 3;
+				} // End a
+			} // End min-width: 700
+		} // End .about-grid
+	} // End #about-me
 
 	#portfolio {
 		min-height: 1000px; // FOR TESTING PURPOSE ONLY
@@ -178,6 +240,91 @@ main {
 		margin: 0 auto;
 		position: relative;
 		background-color: @light-blue;
+
+		.filters {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			width: @default-width;
+			margin: 20px auto;
+
+			.filter-link {
+				display: block;
+				min-width: 45px;
+				font-size: @font-base;
+				color: @white;
+				background-color: @blue;
+				text-decoration: none;
+				padding: 5px 10px;
+				margin: 5px 2.5px;
+				border-radius: 20px;
+			} // End .filter-link
+		} // End .filters
+
+		.project-thumbnails {
+			display: flex;
+			flex-wrap: wrap;
+			padding-bottom: 50px;
+
+			.square {
+				position: relative;
+				width: 100%;
+
+				&:after {
+					content: "";
+					display: block;
+					padding-bottom: 100%;
+					background-color: @white;
+					opacity: 0.5;
+				} // End &:after
+
+				&.infinite-tech {
+					background-image: url('../images/projects/infinite_tech_branding.png');
+					background-repeat: no-repeat;
+					background-size: 100%;
+				} // End .infinite-tech
+
+				&.rawlins-rv {
+					background-image: url('../images/projects/bill_businesscard.png');
+					background-repeat: no-repeat;
+					background-size: 100%;
+				} // End .rawlins-rv
+
+				&.country-chic {
+					background-image: url('../images/projects/countryChic_mockups.png');
+					background-repeat: no-repeat;
+					background-size: 100%;
+				} // End .country-chic
+
+				&.ffa {
+					background-image: url('../images/projects/ffaBrochure_mockup.png');
+					background-repeat: no-repeat;
+					background-size: 100%;
+				} // End .ffa
+
+				.square-content {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					display: flex;
+					z-index: 2;
+
+					img {
+						display: block;
+						width: 80%;
+						max-width: 200px;
+						margin: auto;
+						filter: grayscale(100%);
+					} // End img
+				} // End .square-content
+
+				&:hover {
+					img {
+						filter: grayscale(0);
+					}
+				}
+			} // End .square
+		} // End .project-thumbnails
 
 		svg {
 			position: absolute;

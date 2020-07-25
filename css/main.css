@@ -47,6 +47,9 @@ body {
   font-weight: 400;
   color: #64686e;
 }
+h2.unica {
+  font-size: 2.25rem;
+}
 header {
   background-color: #96cfd8;
   height: 100vh;
@@ -68,7 +71,6 @@ header .mobile-menu {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   text-align: right;
-  padding-top: 20%;
   background-color: #64686e;
 }
 header .mobile-menu ul li {
@@ -95,8 +97,8 @@ header .nav-bar {
   display: flex;
   padding: 10px 5%;
   position: fixed;
-  width: 90%;
   background-color: #96cfd8;
+  width: 90%;
   z-index: 50;
 }
 header .nav-bar #logo {
@@ -113,7 +115,7 @@ header .nav-bar .toggle-button {
   top: 0;
   right: 0;
   line-height: 30px;
-  padding: 12px 5%;
+  padding: 12px;
   color: #ffffff;
   border: 0;
   font-size: 1.75rem;
@@ -137,7 +139,7 @@ header #intro {
   line-height: 1.65;
   text-align: center;
   position: fixed;
-  width: 90%;
+  width: 85%;
   left: 0;
   right: 0;
   margin: auto;
@@ -166,35 +168,175 @@ header svg {
   height: 10vw;
 }
 main {
-  min-height: 1000px;
   background-color: #ffffff;
   position: relative;
 }
 main #services {
-  height: 500px;
+  width: 85%;
+  margin: auto;
 }
-main End #services #about-me {
-  height: 500px;
+main #services .unica {
+  padding: 50px 0 20px 0;
 }
-main #resume {
-  height: 1000px;
+main #services .service-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+main #services .service-icons figure {
+  margin: 20px 0;
+}
+main #services .service-icons figure img {
+  display: block;
+  margin: 20px auto;
+}
+main #services .service-icons figure figcaption {
+  text-align: center;
+}
+main #about-me {
   background-image: url('../images/lines-md-left.svg');
   background-position: bottom left;
   background-repeat: no-repeat;
+  background-size: 50%;
   margin: 0 auto;
   position: relative;
 }
-main #resume svg {
+main #about-me svg {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 20vw;
+}
+main #about-me .about-grid {
+  width: 85%;
+  margin: 50px auto 0 auto;
+  padding-bottom: 100px;
+}
+main #about-me .about-grid img {
+  max-width: 250px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 0 100px;
+}
+@media (min-width: 700px) {
+  main #about-me .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  main #about-me .about-grid h2.unica {
+    padding-top: 100px;
+    text-align: left;
+  }
+  main #about-me .about-grid img {
+    max-width: 300px;
+    margin: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  main #about-me .about-grid p {
+    padding: 20px 0;
+  }
+  main #about-me .about-grid a {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
 }
 main #portfolio {
   min-height: 1000px;
   margin: 0 auto;
   position: relative;
   background-color: #e2f0f9;
+}
+main #portfolio .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 85%;
+  margin: 20px auto;
+}
+main #portfolio .filters .filter-link {
+  display: block;
+  min-width: 45px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #286fb4;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 5px 2.5px;
+  border-radius: 20px;
+}
+main #portfolio .project-thumbnails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+main #portfolio .project-thumbnails .square {
+  position: relative;
+  width: 100%;
+}
+main #portfolio .project-thumbnails .square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+main #portfolio .project-thumbnails .square.infinite-tech {
+  background-image: url('../images/projects/infinite_tech_branding.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+main #portfolio .project-thumbnails .square.rawlins-rv {
+  background-image: url('../images/projects/bill_businesscard.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+main #portfolio .project-thumbnails .square.country-chic {
+  background-image: url('../images/projects/countryChic_mockups.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+main #portfolio .project-thumbnails .square.ffa {
+  background-image: url('../images/projects/ffaBrochure_mockup.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+main #portfolio .project-thumbnails .square .square-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 2;
+}
+main #portfolio .project-thumbnails .square .square-content img {
+  display: block;
+  width: 80%;
+  max-width: 200px;
+  margin: auto;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+main #portfolio .project-thumbnails .square:hover img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 main #portfolio svg {
   position: absolute;
