@@ -383,6 +383,15 @@ main #contact .contact-form form textarea {
   padding: 5px 5%;
   margin: 20px 0;
 }
+main #contact .contact-form form button {
+  font-family: 'Unica One', sans-serif;
+  color: #df4c73;
+  text-align: center;
+  font-size: 3.375rem;
+  font-weight: normal;
+  font-size: 1em;
+  color: #ffffff;
+}
 main #contact svg {
   position: absolute;
   bottom: 0;
@@ -390,9 +399,42 @@ main #contact svg {
   height: 10vw;
 }
 footer {
-  height: 200px;
   background-color: #64686e;
   position: relative;
+  padding-bottom: 20px;
+}
+footer .footer-content {
+  width: 85%;
+  margin: auto;
+  color: #ffffff;
+  padding-top: 40px;
+}
+footer .footer-content .logo {
+  display: block;
+  width: 75%;
+  margin: auto;
+}
+footer .footer-content .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer .footer-content .social-icons div {
+  margin: 10px;
+}
+footer .footer-content p {
+  font-size: 0.667rem;
+}
+footer .footer-content a {
+  color: #e2f0f9;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+  margin: 20px auto;
 }
 /***** MEDIA QUERIES *****/
 @media (min-width: 900px) {

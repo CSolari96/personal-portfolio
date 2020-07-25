@@ -378,6 +378,12 @@ main {
 					padding: 5px 5%;
 					margin: 20px 0;
 				} // End input, textarea
+
+				button {
+					.unica();
+					font-size: @font-base;
+					color: @white;
+				}
 			} // End form
 		} // End .contact-form
 
@@ -391,10 +397,44 @@ main {
 } // End main
 
 footer {
-	height: 200px; // FOR TESTING PURPOSES ONLY
-
 	background-color: @gray;
 	position: relative;
+	padding-bottom: 20px;
+
+	.footer-content {
+		width: @default-width;
+		margin: auto;
+		color: @white;
+		padding-top: 40px;
+
+		.logo {
+			display: block;
+			width: 75%;
+			margin: auto;
+		} // End .logo
+
+		.social-icons {
+			display: flex;
+			justify-content: center;
+
+			div {
+				margin: 10px;
+			} // End div
+		} // End .social-icons
+
+		p {
+			font-size: @font-base__sm;
+		} // End p
+
+		a {
+			color: @light-blue;
+			text-decoration: none;
+			font-size: @font-base__md;
+			text-align: center;
+			display: block;
+			margin: 20px auto;
+		}
+	} // End .footer-content
 } // End footer
 
 /***** MEDIA QUERIES *****/
