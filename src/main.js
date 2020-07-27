@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 	// When the user clicks the mobile menu close button, hide the mobile menu and display the menu open button
 	menuClose.addEventListener("click", closeMenu);
 
-	mobileLinks.forEach(link => {
+	Array.prototype.forEach.call(mobileLinks, (link) => {
 		link.addEventListener('click', closeMenu);
 	});
 });
