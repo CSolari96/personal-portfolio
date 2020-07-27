@@ -42,6 +42,10 @@
 img {
   max-width: 90%;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   font-family: Raleway, sans-serif;
   font-weight: 400;
@@ -52,7 +56,7 @@ h2.unica {
 }
 header {
   background-color: #96cfd8;
-  height: 100vh;
+  min-height: 100%;
   background-image: url('../images/lines-lgt.svg');
   background-position: bottom;
   background-attachment: fixed;
@@ -360,6 +364,9 @@ main #contact .contact-form {
 main #contact .contact-form p {
   padding: 20px 0;
 }
+main #contact .contact-form .email-link {
+  text-align: center;
+}
 main #contact .contact-form .email-link img {
   width: 30px;
   padding-right: 10px;
@@ -427,6 +434,7 @@ footer .footer-content .social-icons div {
 }
 footer .footer-content p {
   font-size: 0.667rem;
+  text-align: center;
 }
 footer .footer-content a {
   color: #e2f0f9;

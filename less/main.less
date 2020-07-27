@@ -13,6 +13,10 @@ img {
 	max-width: 90%;
 } // End img
 
+html, body {
+	height: 100%;
+} // End html, body
+
 body {
 	.body-copy();
 	color: @gray;
@@ -20,11 +24,11 @@ body {
 
 h2.unica {
 	font-size: @font-base__lg;
-}
+} // End h2.unica
 
 header {
 	background-color: @teal;
-	height: 100vh;
+	min-height: 100%;
 	background-image: url('../images/lines-lgt.svg');
 	background-position: bottom;
 	.background();
@@ -351,7 +355,9 @@ main {
 				padding: 20px 0;
 			} // End p
 
-			.email-link {				
+			.email-link {	
+				text-align: center;
+
 				img {
 					width: 30px;
 					padding-right: 10px;
@@ -424,6 +430,7 @@ footer {
 
 		p {
 			font-size: @font-base__sm;
+			text-align: center;
 		} // End p
 
 		a {
