@@ -42,6 +42,9 @@
 img {
   max-width: 90%;
 }
+html {
+  scroll-padding-top: 70px;
+}
 html,
 body {
   height: 100%;
