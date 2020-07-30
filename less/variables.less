@@ -51,10 +51,18 @@
 	font-size: @font-base;
 	background-color: @pink;
 	color: @white;
+	transition: 0.5s all;
 
 	&:link {
 		text-decoration: none;
 	} // End &:link
+
+	&:hover {
+		background-color: @white;
+		color: @pink;
+		box-shadow: 0px 0px 0px 2px @pink;
+		transition: 0.5s all;
+	} // End &:hover
 } // End .button
 
 .hide {

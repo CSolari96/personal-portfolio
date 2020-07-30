@@ -25,9 +25,19 @@
   font-size: 1em;
   background-color: #df4c73;
   color: #ffffff;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 .button:link {
   text-decoration: none;
+}
+.button:hover {
+  background-color: #ffffff;
+  color: #df4c73;
+  -webkit-box-shadow: 0px 0px 0px 2px #df4c73;
+          box-shadow: 0px 0px 0px 2px #df4c73;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 .hide {
   display: none;
@@ -284,6 +294,16 @@ main #portfolio .filters .filter-link {
   padding: 5px 10px;
   margin: 5px 2.5px;
   border-radius: 20px;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+main #portfolio .filters .filter-link:hover {
+  background-color: #ffffff;
+  color: #286fb4;
+  -webkit-box-shadow: 0px 0px 0px 2px #286fb4;
+          box-shadow: 0px 0px 0px 2px #286fb4;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 main #portfolio .project-thumbnails {
   display: -webkit-box;
@@ -392,15 +412,6 @@ main #contact .contact-form form textarea {
   width: 90%;
   padding: 5px 5%;
   margin: 20px 0;
-}
-main #contact .contact-form form button {
-  font-family: 'Unica One', sans-serif;
-  color: #df4c73;
-  text-align: center;
-  font-size: 3.375rem;
-  font-weight: normal;
-  font-size: 1em;
-  color: #ffffff;
 }
 main #contact svg {
   position: absolute;
