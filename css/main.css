@@ -360,10 +360,14 @@ main #portfolio .project-thumbnails .square .square-content img {
   margin: auto;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 main #portfolio .project-thumbnails .square:hover img {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 main #portfolio svg {
   position: absolute;
