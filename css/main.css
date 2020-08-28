@@ -8,6 +8,7 @@
 .body-copy {
   font-family: Raleway, sans-serif;
   font-weight: 400;
+  line-height: 30px;
 }
 .background {
   background-attachment: fixed;
@@ -62,10 +63,12 @@ body {
 body {
   font-family: Raleway, sans-serif;
   font-weight: 400;
+  line-height: 30px;
   color: #64686e;
 }
 h2.unica {
   font-size: 2.25rem;
+  line-height: normal;
 }
 header {
   background-color: #96cfd8;
@@ -120,10 +123,11 @@ header .nav-bar {
 }
 header .nav-bar #logo {
   width: 60%;
+  max-width: 400px;
 }
-@media (min-width: 500px) {
+@media (min-width: 1050px) {
   header .nav-bar #logo {
-    width: 100%;
+    max-width: 500px;
   }
 }
 header .nav-bar .toggle-button {
@@ -157,6 +161,7 @@ header #intro {
   text-align: center;
   position: fixed;
   width: 85%;
+  max-width: 1300px;
   left: 0;
   right: 0;
   margin: auto;
@@ -190,6 +195,7 @@ main {
 }
 main #services {
   width: 85%;
+  max-width: 1300px;
   margin: auto;
 }
 main #services .unica {
@@ -222,6 +228,7 @@ main #about-me {
   background-repeat: no-repeat;
   background-size: 50%;
   margin: 0 auto;
+  padding-top: 10px;
   position: relative;
 }
 main #about-me svg {
@@ -232,6 +239,7 @@ main #about-me svg {
 }
 main #about-me .about-grid {
   width: 85%;
+  max-width: 900px;
   margin: 50px auto 0 auto;
   padding-bottom: 100px;
 }
@@ -241,35 +249,9 @@ main #about-me .about-grid img {
   margin: 20px auto;
   border-radius: 0 100px;
 }
-@media (min-width: 700px) {
-  main #about-me .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-  }
-  main #about-me .about-grid h2.unica {
-    padding-top: 100px;
-    text-align: left;
-  }
-  main #about-me .about-grid img {
-    max-width: 300px;
-    margin: auto;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-  main #about-me .about-grid p {
-    padding: 20px 0;
-  }
-  main #about-me .about-grid a {
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
-}
 main #portfolio {
-  min-height: 1000px;
   margin: 0 auto;
+  padding-top: 20px;
   position: relative;
   background-color: #e2f0f9;
 }
@@ -282,6 +264,7 @@ main #portfolio .filters {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 85%;
+  max-width: 1300px;
   margin: 20px auto;
 }
 main #portfolio .filters .filter-link {
@@ -385,6 +368,7 @@ main #contact {
 }
 main #contact .contact-form {
   width: 85%;
+  max-width: 1300px;
   margin: auto;
   padding-bottom: 50px;
 }
@@ -409,6 +393,7 @@ main #contact .contact-form form input,
 main #contact .contact-form form textarea {
   font-family: Raleway, sans-serif;
   font-weight: 400;
+  line-height: 30px;
   color: #64686e;
   display: block;
   border: 2px #e2f0f9 solid;
@@ -430,6 +415,7 @@ footer {
 }
 footer .footer-content {
   width: 85%;
+  max-width: 1300px;
   margin: auto;
   color: #ffffff;
   padding-top: 40px;
@@ -463,7 +449,80 @@ footer .footer-content a {
   margin: 20px auto;
 }
 /***** MEDIA QUERIES *****/
+@media (min-width: 550px) {
+  main #services .service-icons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main #services .service-icons figure {
+    width: 45%;
+  }
+  main #about-me {
+    background-size: contain;
+  }
+  main #portfolio .project-thumbnails .square {
+    width: 50%;
+  }
+  main #portfolio .project-thumbnails .square .square-content img {
+    max-width: 150px;
+  }
+}
+@media (min-width: 800px) {
+  h2.unica {
+    font-size: 3.375rem;
+  }
+  header #intro {
+    padding-top: 200px;
+    font-size: 1.5rem;
+  }
+  header #intro .unica {
+    font-size: 5.063rem;
+  }
+  main #about-me .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-template-rows: auto auto auto;
+    padding-bottom: 200px;
+  }
+  main #about-me .about-grid h2.unica {
+    padding-top: 100px;
+    text-align: left;
+  }
+  main #about-me .about-grid img {
+    max-width: 300px;
+    margin: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  main #about-me .about-grid p {
+    padding: 20px 0;
+  }
+  main #about-me .about-grid a {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  main #portfolio {
+    margin-top: -50px;
+    padding-top: 25px;
+  }
+  main #portfolio .filters {
+    margin: 50px auto;
+  }
+  main #portfolio .project-thumbnails .square {
+    width: 33.33%;
+  }
+}
 @media (min-width: 900px) {
+  header {
+    background-size: 100%;
+  }
   header .nav-bar .toggle-button {
     display: none;
   }
@@ -501,5 +560,39 @@ footer .footer-content a {
   header .nav-bar .desktop-menu li a:hover,
   header .nav-bar .desktop-menu li a:active {
     color: #df4c73;
+  }
+  main #services .service-icons {
+    padding: 50px 0;
+  }
+  main #services .service-icons figure {
+    width: 20%;
+  }
+}
+@media (min-width: 1050px) {
+  main #about-me .about-grid {
+    padding-bottom: 250px;
+  }
+  main #about-me .about-grid img {
+    max-width: 400px;
+  }
+  main #portfolio {
+    margin-top: -100px;
+    padding-top: 50px;
+  }
+  main #portfolio .project-thumbnails .square {
+    width: 25%;
+  }
+}
+@media (min-width: 1250px) {
+  main #portfolio h2.unica {
+    margin-top: -50px;
+  }
+  main #portfolio .project-thumbnails .square .square-content img {
+    max-width: 200px;
+  }
+}
+@media (min-width: 1500px) {
+  main #about-me .about-grid {
+    padding-bottom: 350px;
   }
 }

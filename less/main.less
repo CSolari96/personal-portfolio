@@ -28,6 +28,7 @@ body {
 
 h2.unica {
 	font-size: @font-base__lg;
+	line-height: normal;
 } // End h2.unica
 
 header {
@@ -83,10 +84,11 @@ header {
 
 		#logo {
 			width: 60%;
+			max-width: 400px;
 
-			@media (min-width: 500px) {
-				width: 100%;
-			} // End min-width 500
+			@media(min-width: 1050px) {
+				max-width: 500px;
+			} // End min-width 1050
 		} // End #logo
 
 		.toggle-button {
@@ -122,6 +124,7 @@ header {
 		text-align: center;
 		position: fixed;
 		width: @default-width;
+		max-width: @default-width__max;
 		left: 0;
 		right: 0;
 		margin: auto;
@@ -158,6 +161,7 @@ main {
 
 	#services {
 		width: @default-width;
+		max-width: @default-width__max;
 		margin: auto;
 
 		.unica {
@@ -190,6 +194,7 @@ main {
 		background-repeat: no-repeat;
 		background-size: 50%;
 		margin: 0 auto;	
+		padding-top: 10px;
 		position: relative;
 
 		svg {
@@ -201,6 +206,7 @@ main {
 
 		.about-grid {
 			width: @default-width;
+			max-width: 900px;
 			margin: 50px auto 0 auto;
 			padding-bottom: 100px;
 
@@ -210,42 +216,12 @@ main {
 				margin: 20px auto;
 				border-radius: 0 100px;
 			} // End img
-
-			@media(min-width: 700px) {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: auto auto auto;
-
-				h2.unica {
-					padding-top: 100px;
-					text-align: left;
-				}  // End h2.unica
-
-				img {
-					max-width: 300px;
-					margin: auto;
-					grid-column-start: 2;
-					grid-column-end: 3;
-					grid-row-start: 1;
-					grid-row-end: 3;
-				} // End img
-
-				p {
-					padding: 20px 0;
-				} // End p
-
-				a {
-					grid-column-start: 2;
-					grid-column-end: 3;
-				} // End a
-			} // End min-width: 700
 		} // End .about-grid
 	} // End #about-me
 
 	#portfolio {
-		min-height: 1000px; // FOR TESTING PURPOSE ONLY
-
 		margin: 0 auto;
+		padding-top: 20px;
 		position: relative;
 		background-color: @light-blue;
 
@@ -254,6 +230,7 @@ main {
 			flex-wrap: wrap;
 			justify-content: space-around;
 			width: @default-width;
+			max-width: @default-width__max;
 			margin: 20px auto;
 
 			.filter-link {
@@ -339,8 +316,8 @@ main {
 					img {
 						filter: grayscale(0);
 						transition: 0.5s all;
-					}
-				}
+					} // End img
+				} // End End &:hover
 			} // End .square
 		} // End .project-thumbnails
 
@@ -362,6 +339,7 @@ main {
 
 		.contact-form {
 			width: @default-width;
+			max-width: @default-width__max;
 			margin: auto;
 			padding-bottom: 50px;
 
@@ -417,6 +395,7 @@ footer {
 
 	.footer-content {
 		width: @default-width;
+		max-width: @default-width__max;
 		margin: auto;
 		color: @white;
 		padding-top: 40px;
@@ -453,8 +432,110 @@ footer {
 } // End footer
 
 /***** MEDIA QUERIES *****/
+@media(min-width: 550px) {
+	main {
+		#services {
+			.service-icons {
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				figure {
+					width: 45%;
+				} // End figure
+			} // End .service-icons
+		} // End #services
+
+		#about-me {
+			background-size: contain;
+		} // End #about-me
+
+		#portfolio {
+			.project-thumbnails {
+				.square {
+					width: 50%;
+
+					.square-content {
+						img {
+							max-width: 150px;
+						} // End img
+					} // End .square-content
+				} // End .square
+			} // End .project-thumbnails
+		} // End #portfolio
+	} // End main
+} // End min-width 550
+
+@media(min-width: 800px) {
+	h2.unica {
+		font-size: @font-head;
+	} // End h2.unica
+
+	header {
+		#intro {
+			padding-top: 200px;
+			font-size: @font-base__md;
+
+			.unica {
+				font-size: @font-head__md;
+			} // End .unica
+		} // End #intro
+	} // End header
+
+	main {
+		#about-me {
+			.about-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-column-gap: 30px;
+				grid-template-rows: auto auto auto;
+				padding-bottom: 200px;
+
+				h2.unica {
+					padding-top: 100px;
+					text-align: left;
+				}  // End h2.unica
+
+				img {
+					max-width: 300px;
+					margin: auto;
+					grid-column-start: 2;
+					grid-column-end: 3;
+					grid-row-start: 1;
+					grid-row-end: 3;
+				} // End img
+
+				p {
+					padding: 20px 0;
+				} // End p
+
+				a {
+					grid-column-start: 2;
+					grid-column-end: 3;
+				} // End a
+			} // End .about-grid
+		} // End #about-me
+
+		#portfolio {
+			margin-top: -50px;
+			padding-top: 25px;
+
+			.filters {
+				margin: 50px auto;
+			} // End .filters
+
+			.project-thumbnails {
+				.square {
+					width: 33.33%;
+				} // End .square
+			} // End .project-thumbnails
+		} // End #portfolio
+	} // End main
+} // End min-width 800
+
 @media(min-width: 900px) {
 	header {
+		background-size: 100%;
+
 		.nav-bar {
 			.toggle-button {
 				display: none;
@@ -488,6 +569,72 @@ footer {
 					} // End a
 				} // End li
 			} // End .desktop-menu
-		} // End .nav-bar
+		} // End .nav-bar		
 	} // End header
+
+	main {
+		#services {
+			.service-icons {
+				padding: 50px 0;
+				figure {
+					width: 20%;
+				} // End figure
+			} // End .service-icons
+		} // End #services
+	} // End main
 } // End min-width 900
+
+@media(min-width: 1050px) {
+	main {
+		#about-me {
+			.about-grid {
+				padding-bottom: 250px;
+
+				img {
+					max-width: 400px;
+				} // End img
+			} // End .about-gri
+		} // End #about-me
+
+		#portfolio {
+			margin-top: -100px;
+			padding-top: 50px;
+
+			.project-thumbnails {
+				.square {
+					width: 25%;
+				} // End .square
+			} // End .project-thumbnails
+		} // End #portfolio
+	} // End main
+} // End min-width 1050
+
+@media(min-width: 1250px) {
+	main {
+		#portfolio {
+			h2.unica {
+				margin-top: -50px;
+			} // End h2.unica
+
+			.project-thumbnails {
+				.square {
+					.square-content {
+						img {
+							max-width: 200px;
+						} // End img
+					} // End .square-content
+				} // End .square
+			} // End .project-thumbnails
+		} // End #portfolio
+	} // End main
+} // End min-width 1250
+
+@media(min-width: 1500px) {
+	main {
+		#about-me {
+			.about-grid {
+				padding-bottom: 350px;
+			} // End .about-grid
+		} // End #about-me
+	} // End main
+} // End min-width 1500
