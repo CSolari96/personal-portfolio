@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 	/***** PORTFOLIO MODAL WINDOWS *****/
 	const linkContainers =	document.getElementsByClassName('square');
+	const body			 =	document.getElementsByTagName('body')[0];
 
 	// Listen for click event on all divs with class "square"
 	Array.from(linkContainers).forEach(container => {
@@ -43,18 +44,20 @@ document.addEventListener('DOMContentLoaded', function(event) {
 			const close   =	 modal.getElementsByClassName('close')[0];
 
 			// Remove hide class from modal
-			console.log("Clicked");
 			modal.classList.remove('hide');
+			body.classList.add('modal-open');
 
 			// When the user clicks the close button, hide the modal window
 			close.addEventListener('click', function() {
 				modal.classList.add('hide');
+				body.classList.remove('modal-open');
 			});
 
 			// When the user clicks outside of the modal, hide the modal window
 			window.addEventListener('click', function(event) {
 				if (event.target == modal) {
 					modal.classList.add('hide');
+					body.classList.remove('modal-open');
 				}
 			});
 		});

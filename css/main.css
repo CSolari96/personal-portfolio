@@ -10,6 +10,9 @@
   font-weight: 400;
   line-height: 30px;
 }
+p {
+  padding: 20px 0;
+}
 .background {
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -26,7 +29,6 @@
   font-size: 1em;
   background-color: #df4c73;
   color: #ffffff;
-  -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
 .button:link {
@@ -35,13 +37,14 @@
 .button:hover {
   background-color: #ffffff;
   color: #df4c73;
-  -webkit-box-shadow: 0px 0px 0px 2px #df4c73;
-          box-shadow: 0px 0px 0px 2px #df4c73;
-  -webkit-transition: 0.5s all;
+  box-shadow: 0px 0px 0px 2px #df4c73;
   transition: 0.5s all;
 }
 .hide {
   display: none;
+}
+.modal-open {
+  overflow: hidden;
 }
 /***** RESET STYLES *****/
 * {
@@ -92,7 +95,6 @@ header .mobile-menu {
   top: -20%;
   right: 0;
   overflow-y: hidden;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   text-align: right;
   background-color: #64686e;
@@ -106,18 +108,14 @@ header .mobile-menu ul li a:visited {
   color: #ffffff;
   text-decoration: none;
   font-size: 3rem;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 header .mobile-menu ul li a:hover,
 header .mobile-menu ul li a:active {
   color: #df4c73;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 header .nav-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 10px 5%;
   position: fixed;
@@ -177,12 +175,8 @@ header #intro h1 {
   font-weight: 500;
 }
 header #intro .social-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 header #intro .social-icons div {
   margin: 20px;
@@ -209,15 +203,9 @@ main #services .unica {
   padding: 50px 0 20px 0;
 }
 main #services .service-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
 }
 main #services .service-icons figure {
   margin: 20px 0;
@@ -263,13 +251,9 @@ main #portfolio {
   background-color: #e2f0f9;
 }
 main #portfolio .filters {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
   width: 85%;
   max-width: 900px;
   margin: 20px auto;
@@ -284,26 +268,18 @@ main #portfolio .filters .filter-link {
   padding: 5px 10px;
   margin: 5px 2.5px;
   border-radius: 20px;
-  -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
 main #portfolio .filters .filter-link:hover {
   background-color: #ffffff;
   color: #286fb4;
-  -webkit-box-shadow: 0px 0px 0px 2px #286fb4;
-          box-shadow: 0px 0px 0px 2px #286fb4;
-  -webkit-transition: 0.5s all;
+  box-shadow: 0px 0px 0px 2px #286fb4;
   transition: 0.5s all;
 }
 main #portfolio .project-thumbnails {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   padding-bottom: 50px;
 }
 main #portfolio .project-thumbnails .square {
@@ -341,8 +317,6 @@ main #portfolio .project-thumbnails .square .square-content {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   z-index: 2;
 }
@@ -351,15 +325,11 @@ main #portfolio .project-thumbnails .square .square-content img {
   width: 80%;
   max-width: 200px;
   margin: auto;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  -webkit-transition: 0.5s all;
+  filter: grayscale(100%);
   transition: 0.5s all;
 }
 main #portfolio .project-thumbnails .square:hover img {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-  -webkit-transition: 0.5s all;
+  filter: grayscale(0);
   transition: 0.5s all;
 }
 main #portfolio svg {
@@ -446,12 +416,8 @@ footer .footer-content .logo {
   margin: auto;
 }
 footer .footer-content .social-icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 footer .footer-content .social-icons div {
   margin: 10px;
@@ -501,11 +467,11 @@ footer .footer-content a {
 }
 .modals-container .modal .modal-content .banner-image img {
   width: 100%;
+  max-width: 100%;
   height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 15%;
-     object-position: 50% 15%;
+  object-fit: cover;
+  object-position: 50% 15%;
+  margin: 20px 0;
 }
 .modals-container .modal .modal-content .category {
   color: #96cfd8;
@@ -523,12 +489,8 @@ footer .footer-content a {
 /***** MEDIA QUERIES *****/
 @media (min-width: 550px) {
   main #services .service-icons {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   main #services .service-icons figure {
     width: 45%;
@@ -579,9 +541,6 @@ footer .footer-content a {
     grid-row-start: 1;
     grid-row-end: 3;
   }
-  main #about-me .about-grid p {
-    padding: 20px 0;
-  }
   main #about-me .about-grid a {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -610,27 +569,17 @@ footer .footer-content a {
   }
   header .nav-bar .desktop-menu {
     text-align: right;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    flex-grow: 1;
     display: flex;
-    -webkit-box-pack: right;
-        -ms-flex-pack: right;
-            justify-content: right;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: right;
+    align-items: center;
     max-width: 600px;
     margin-left: auto;
   }
   header .nav-bar .desktop-menu li {
     display: inline;
     list-style-type: none;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
   }
   header .nav-bar .desktop-menu li a:link,
   header .nav-bar .desktop-menu li a:visited {
