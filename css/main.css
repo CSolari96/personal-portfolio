@@ -499,6 +499,27 @@ footer .footer-content a {
   text-decoration: none;
   cursor: pointer;
 }
+.modals-container .modal .modal-content .banner-image img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 15%;
+     object-position: 50% 15%;
+}
+.modals-container .modal .modal-content .category {
+  color: #96cfd8;
+}
+.modals-container .modal .modal-content h4 {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.5rem;
+  color: #286fb4;
+}
+.modals-container .modal .modal-content .unica {
+  text-align: left;
+  line-height: 50px;
+}
 /***** MEDIA QUERIES *****/
 @media (min-width: 550px) {
   main #services .service-icons {

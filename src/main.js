@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 	/***** PORTFOLIO MODAL WINDOWS *****/
-	const linkContainers =	document.getElementsByClassName('square-content');
+	const linkContainers =	document.getElementsByClassName('square');
 
 	// Listen for click event on all divs with class "square"
 	Array.from(linkContainers).forEach(container => {
 		container.addEventListener('click', function() {
-			const modalID =	 container.parentNode.classList.item(1);
+			const modalID =	 container.classList.item(1);
 			const modal   =	 document.getElementById(modalID);
 			const close   =	 modal.getElementsByClassName('close')[0];
 

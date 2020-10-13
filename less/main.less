@@ -484,6 +484,33 @@ footer {
 					cursor: pointer;
 				} // End &:hover, &:focus
 			} // End .close
+
+			.banner-image {
+				img {
+					width: 100%;
+					max-width: 100%
+					height: 400px;
+					object-fit: cover;
+					object-position: 50% 15%;
+					margin: 20px 0;
+				} // End img
+			} // End .banner-img
+
+			.category {
+				color: @teal;
+			} // End .category
+
+			h4 {
+				font-style: italic;
+				font-weight: normal;
+				font-size: @font-base__md;
+				color: @blue;
+			} // End h4
+
+			.unica {
+				text-align: left;
+				line-height: 50px;
+			} // End .unica
 		} // End .modal-content
 	} // End .modal
 } // End .modals-container
@@ -569,9 +596,7 @@ footer {
 					grid-row-end: 3;
 				} // End img
 
-				p {
-					padding: 20px 0;
-				} // End p
+				
 
 				a {
 					grid-column-start: 2;
