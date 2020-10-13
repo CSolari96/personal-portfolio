@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(event) {
+	
+	/***** NAVIGATION *****/
 	const menuClose 	= 	document.getElementById('close-menu');
 	const menuOpen 		= 	document.getElementById('open-mobile-menu');
 	const mobileMenu 	= 	document.getElementsByClassName('mobile-menu')[0];
@@ -27,4 +29,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
 	Array.prototype.forEach.call(mobileLinks, (link) => {
 		link.addEventListener('click', closeMenu);
 	});
+	/***** END NAVIGATION *****/
+
+
+	/***** PORTFOLIO MODAL WINDOWS *****/
+	
+	/***** END PORTFOLIO MODAL WINDOWS *****/
 });
