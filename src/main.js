@@ -33,16 +33,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 	/***** PORTFOLIO MODAL WINDOWS *****/
-	const linkContainers =	document.getElementsByClassName('square');
+	const linkContainers =	document.getElementsByClassName('square-content');
 
 	// Listen for click event on all divs with class "square"
 	Array.from(linkContainers).forEach(container => {
 		container.addEventListener('click', function() {
-			const modalID =	 container.classList.item(1);
+			const modalID =	 container.parentNode.classList.item(1);
 			const modal   =	 document.getElementById(modalID);
 			const close   =	 modal.getElementsByClassName('close')[0];
 
 			// Remove hide class from modal
+			console.log("Clicked");
 			modal.classList.remove('hide');
 
 			// When the user clicks the close button, hide the modal window
