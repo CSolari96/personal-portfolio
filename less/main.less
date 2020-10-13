@@ -1,14 +1,18 @@
 // Import variables.less
 @import 'variables';
 
-/* Reset Rule */
+/***** RESET STYLES *****/
 * {
 	margin: 0;
 	padding: 0;
 	border: 0;
 } // End reset
 
-/* General Stylings */
+:focus {
+	outline: none;
+} // End :focus;
+
+/***** GENERAL STYLINGS *****/
 img {
 	max-width: 90%;
 } // End img
@@ -31,6 +35,7 @@ h2.unica {
 	line-height: normal;
 } // End h2.unica
 
+/***** HEADER *****/
 header {
 	background-color: @teal;
 	min-height: 100%;
@@ -124,7 +129,7 @@ header {
 		text-align: center;
 		position: fixed;
 		width: @default-width;
-		max-width: @default-width__max;
+		max-width: @default-width__max__lg;
 		left: 0;
 		right: 0;
 		margin: auto;
@@ -152,17 +157,20 @@ header {
 		bottom: 0;
 		width: 100%;
 		height: 10vw;
+		z-index: 10;
 	} // End svg
 } // End header
 
+/***** MAIN *****/
 main {
 	background-color: @white;
 	position: relative;
 
 	#services {
 		width: @default-width;
-		max-width: @default-width__max;
+		max-width: @default-width__max__lg;
 		margin: auto;
+		padding: 25px 0 50px 0;
 
 		.unica {
 			padding: 50px 0 20px 0;
@@ -206,8 +214,8 @@ main {
 
 		.about-grid {
 			width: @default-width;
-			max-width: 900px;
-			margin: 50px auto 0 auto;
+			max-width: @default-width__max;
+			margin: 25px auto 0 auto;
 			padding-bottom: 100px;
 
 			img {
@@ -256,6 +264,7 @@ main {
 
 		.project-thumbnails {
 			display: flex;
+			justify-content: center;
 			flex-wrap: wrap;
 			padding-bottom: 50px;
 
@@ -329,55 +338,65 @@ main {
 		} // End svg
 	} // End #portfolio
 
-	#contact {
+	.contact-background {
 		background-color: @white;
 		background-image: url('../images/lines-md-left.svg'), url('../images/lines-md-right.svg');
 		background-position: bottom left, bottom right;
 		background-repeat: no-repeat;
 		background-size: 40%;
-		margin-top: 75px;
+		margin-top: -10vw;
+		padding-top: 1px;
 
-		.contact-form {
+		#contact {
+			margin: 100px auto auto auto;
+			padding-top: 30px;
 			width: @default-width;
-			max-width: @default-width__max;
-			margin: auto;
-			padding-bottom: 50px;
+			max-width: 700px;
 
-			p {
-				padding: 20px 0;
-			} // End p
+			.contact-form {
+				padding-bottom: 50px;
 
-			.email-link {	
-				text-align: center;
+				p {
+					padding: 20px 0;
+					text-align: center;
+				} // End p
 
-				img {
-					width: 30px;
-					padding-right: 10px;
-				} // End img
+				.email-link {	
+					text-align: center;
 
-				a {
-					color: @blue;
-					text-decoration: none;
-				} // End a
-			} // End .email-link
+					img {
+						width: 30px;
+						padding-right: 10px;
+					} // End img
 
-			form {
-				label {
-					display: none;
-				} // End label
+					a {
+						color: @blue;
+						text-decoration: none;
+					} // End a
+				} // End .email-link
 
-				input, textarea {
-					.body-copy();
-					color: @gray;
-					display: block;
-					border: 2px @light-blue solid;
-					border-radius: 20px;
-					width: 90%;
-					padding: 5px 5%;
-					margin: 20px 0;
-				} // End input, textarea
-			} // End form
-		} // End .contact-form
+				form {
+					label {
+						display: none;
+					} // End label
+
+					input, textarea {
+						.body-copy();
+						color: @gray;
+						display: block;
+						border: 2px @light-blue solid;
+						border-radius: 20px;
+						width: 90%;
+						padding: 5px 5%;
+						margin: 20px 0;
+					} // End input, textarea
+
+					textarea {
+						resize: none;
+					}
+				} // End form
+			} // End .contact-form
+		} // End #contact
 
 		svg {
 			position: absolute;
@@ -385,9 +404,10 @@ main {
 			width: 100%;
 			height: 10vw;
 		} // End svg
-	} // End #contact
+	} // End .contact-background
 } // End main
 
+/***** FOOTER *****/
 footer {
 	background-color: @gray;
 	position: relative;
@@ -395,7 +415,7 @@ footer {
 
 	.footer-content {
 		width: @default-width;
-		max-width: @default-width__max;
+		max-width: @default-width__max__lg;
 		margin: auto;
 		color: @white;
 		padding-top: 40px;
@@ -403,6 +423,7 @@ footer {
 		.logo {
 			display: block;
 			width: 75%;
+			max-width: 250px;
 			margin: auto;
 		} // End .logo
 
@@ -462,6 +483,14 @@ footer {
 				} // End .square
 			} // End .project-thumbnails
 		} // End #portfolio
+
+		.contact-background {
+			background-size: 30%;
+
+			#contact {
+				margin-top: 150px;
+			} // End #contact
+		} // End .contact-background
 	} // End main
 } // End min-width 550
 
@@ -529,6 +558,13 @@ footer {
 				} // End .square
 			} // End .project-thumbnails
 		} // End #portfolio
+
+		.contact-background {
+			#contact {
+				margin-top: 175px;
+				padding-top: 75px;
+			} // #contact
+		} // End .contact-background
 	} // End main
 } // End min-width 800
 
@@ -606,16 +642,19 @@ footer {
 				} // End .square
 			} // End .project-thumbnails
 		} // End #portfolio
+
+		.contact-background {
+			#contact {
+				margin-top: 200px;
+				padding: 100px;
+			} // End #contact
+		} // End .contact-background
 	} // End main
 } // End min-width 1050
 
 @media(min-width: 1250px) {
 	main {
 		#portfolio {
-			h2.unica {
-				margin-top: -50px;
-			} // End h2.unica
-
 			.project-thumbnails {
 				.square {
 					.square-content {
@@ -626,6 +665,15 @@ footer {
 				} // End .square
 			} // End .project-thumbnails
 		} // End #portfolio
+
+		.contact-background {
+			background-size: 25%;
+
+			#contact {
+				margin-top: 250px;
+				padding-top: 50px;
+			} // End #contact
+		} // End .contact-background
 	} // End main
 } // End min-width 1250
 
@@ -636,5 +684,24 @@ footer {
 				padding-bottom: 350px;
 			} // End .about-grid
 		} // End #about-me
+
+		.contact-background {
+			background-size: 20%;
+
+			#contact {
+				margin-top: 350px;
+			} // End #contact
+		} // End .contact-background
 	} // End main
 } // End min-width 1500
+
+@media(min-width: 1950px) {
+	main {
+		.contact-background {
+			#contact {
+				margin-top: 400px;
+				padding-top: 100px;
+			} // End #contact
+		} // End .contact-background
+	} // End main
+} // End min-width 1950

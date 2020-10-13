@@ -43,13 +43,16 @@
 .hide {
   display: none;
 }
-/* Reset Rule */
+/***** RESET STYLES *****/
 * {
   margin: 0;
   padding: 0;
   border: 0;
 }
-/* General Stylings */
+:focus {
+  outline: none;
+}
+/***** GENERAL STYLINGS *****/
 img {
   max-width: 90%;
 }
@@ -70,6 +73,7 @@ h2.unica {
   font-size: 2.25rem;
   line-height: normal;
 }
+/***** HEADER *****/
 header {
   background-color: #96cfd8;
   min-height: 100%;
@@ -188,7 +192,9 @@ header svg {
   bottom: 0;
   width: 100%;
   height: 10vw;
+  z-index: 10;
 }
+/***** MAIN *****/
 main {
   background-color: #ffffff;
   position: relative;
@@ -197,6 +203,7 @@ main #services {
   width: 85%;
   max-width: 1300px;
   margin: auto;
+  padding: 25px 0 50px 0;
 }
 main #services .unica {
   padding: 50px 0 20px 0;
@@ -240,7 +247,7 @@ main #about-me svg {
 main #about-me .about-grid {
   width: 85%;
   max-width: 900px;
-  margin: 50px auto 0 auto;
+  margin: 25px auto 0 auto;
   padding-bottom: 100px;
 }
 main #about-me .about-grid img {
@@ -264,7 +271,7 @@ main #portfolio .filters {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 85%;
-  max-width: 1300px;
+  max-width: 900px;
   margin: 20px auto;
 }
 main #portfolio .filters .filter-link {
@@ -292,6 +299,9 @@ main #portfolio .project-thumbnails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 50px;
@@ -358,39 +368,44 @@ main #portfolio svg {
   width: 100%;
   height: 10vw;
 }
-main #contact {
+main .contact-background {
   background-color: #ffffff;
   background-image: url('../images/lines-md-left.svg'), url('../images/lines-md-right.svg');
   background-position: bottom left, bottom right;
   background-repeat: no-repeat;
   background-size: 40%;
-  margin-top: 75px;
+  margin-top: -10vw;
+  padding-top: 1px;
 }
-main #contact .contact-form {
+main .contact-background #contact {
+  margin: 100px auto auto auto;
+  padding-top: 30px;
   width: 85%;
-  max-width: 1300px;
-  margin: auto;
+  max-width: 700px;
+}
+main .contact-background #contact .contact-form {
   padding-bottom: 50px;
 }
-main #contact .contact-form p {
+main .contact-background #contact .contact-form p {
   padding: 20px 0;
-}
-main #contact .contact-form .email-link {
   text-align: center;
 }
-main #contact .contact-form .email-link img {
+main .contact-background #contact .contact-form .email-link {
+  text-align: center;
+}
+main .contact-background #contact .contact-form .email-link img {
   width: 30px;
   padding-right: 10px;
 }
-main #contact .contact-form .email-link a {
+main .contact-background #contact .contact-form .email-link a {
   color: #286fb4;
   text-decoration: none;
 }
-main #contact .contact-form form label {
+main .contact-background #contact .contact-form form label {
   display: none;
 }
-main #contact .contact-form form input,
-main #contact .contact-form form textarea {
+main .contact-background #contact .contact-form form input,
+main .contact-background #contact .contact-form form textarea {
   font-family: Raleway, sans-serif;
   font-weight: 400;
   line-height: 30px;
@@ -402,12 +417,16 @@ main #contact .contact-form form textarea {
   padding: 5px 5%;
   margin: 20px 0;
 }
-main #contact svg {
+main .contact-background #contact .contact-form form textarea {
+  resize: none;
+}
+main .contact-background svg {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 10vw;
 }
+/***** FOOTER *****/
 footer {
   background-color: #64686e;
   position: relative;
@@ -423,6 +442,7 @@ footer .footer-content {
 footer .footer-content .logo {
   display: block;
   width: 75%;
+  max-width: 250px;
   margin: auto;
 }
 footer .footer-content .social-icons {
@@ -469,6 +489,12 @@ footer .footer-content a {
   }
   main #portfolio .project-thumbnails .square .square-content img {
     max-width: 150px;
+  }
+  main .contact-background {
+    background-size: 30%;
+  }
+  main .contact-background #contact {
+    margin-top: 150px;
   }
 }
 @media (min-width: 800px) {
@@ -517,6 +543,10 @@ footer .footer-content a {
   }
   main #portfolio .project-thumbnails .square {
     width: 33.33%;
+  }
+  main .contact-background #contact {
+    margin-top: 175px;
+    padding-top: 75px;
   }
 }
 @media (min-width: 900px) {
@@ -582,17 +612,37 @@ footer .footer-content a {
   main #portfolio .project-thumbnails .square {
     width: 25%;
   }
+  main .contact-background #contact {
+    margin-top: 200px;
+    padding: 100px;
+  }
 }
 @media (min-width: 1250px) {
-  main #portfolio h2.unica {
-    margin-top: -50px;
-  }
   main #portfolio .project-thumbnails .square .square-content img {
     max-width: 200px;
+  }
+  main .contact-background {
+    background-size: 25%;
+  }
+  main .contact-background #contact {
+    margin-top: 250px;
+    padding-top: 50px;
   }
 }
 @media (min-width: 1500px) {
   main #about-me .about-grid {
     padding-bottom: 350px;
+  }
+  main .contact-background {
+    background-size: 20%;
+  }
+  main .contact-background #contact {
+    margin-top: 350px;
+  }
+}
+@media (min-width: 1950px) {
+  main .contact-background #contact {
+    margin-top: 400px;
+    padding-top: 100px;
   }
 }
