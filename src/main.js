@@ -33,6 +33,30 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 	/***** PORTFOLIO MODAL WINDOWS *****/
-	
+	const linkContainers =	document.getElementsByClassName('square');
+
+	// Listen for click event on all divs with class "square"
+	Array.from(linkContainers).forEach(container => {
+		container.addEventListener('click', function() {
+			const modalID =	 container.classList.item(1);
+			const modal   =	 document.getElementById(modalID);
+			const close   =	 modal.getElementsByClassName('close')[0];
+
+			// Remove hide class from modal
+			modal.classList.remove('hide');
+
+			// When the user clicks the close button, hide the modal window
+			close.addEventListener('click', function() {
+				modal.classList.add('hide');
+			});
+
+			// When the user clicks outside of the modal, hide the modal window
+			window.addEventListener('click', function(event) {
+				if (event.target == modal) {
+					modal.classList.add('hide');
+				}
+			});
+		});
+	});
 	/***** END PORTFOLIO MODAL WINDOWS *****/
 });
